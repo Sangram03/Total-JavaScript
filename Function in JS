@@ -1,1 +1,133 @@
 
+---
+
+### 🔹 1. **Function Declaration (Named Function)**
+
+```js
+function greet(name) {
+  return "Hello, " + name + "!";
+}
+
+console.log(greet("Sangram"));
+```
+
+---
+
+### 🔹 2. **Function Expression (Anonymous Function)**
+
+```js
+const greet = function(name) {
+  return "Hi, " + name + "!";
+};
+
+console.log(greet("Sangram"));
+```
+
+---
+
+### 🔹 3. **Arrow Function (ES6)**
+
+```js
+const greet = (name) => {
+  return "Hey, " + name + "!";
+};
+
+// Or shorter version
+const greetShort = name => "Hey, " + name + "!";
+
+console.log(greet("Sangram"));
+```
+
+---
+
+### 🔹 4. **Immediately Invoked Function Expression (IIFE)**
+
+```js
+(function() {
+  console.log("This function runs immediately!");
+})();
+
+// With parameters
+(function(name) {
+  console.log("Welcome, " + name + "!");
+})("Sangram");
+```
+
+---
+
+### 🔹 5. **Constructor Function**
+
+Used to create objects:
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const person1 = new Person("Sangram", 25);
+console.log(person1.name); // Sangram
+```
+
+---
+
+### 🔹 6. **Function as a Method (Inside Object)**
+
+```js
+const user = {
+  name: "Sangram",
+  greet: function() {
+    return "Hello, " + this.name;
+  }
+};
+
+console.log(user.greet());
+```
+
+---
+
+### 🔹 7. **Arrow Function in Object (No `this`)**
+
+```js
+const user = {
+  name: "Sangram",
+  greet: () => {
+    return "Hello!";
+  }
+};
+
+console.log(user.greet());
+```
+
+*Note: Arrow functions do **not bind their own `this`**.*
+
+---
+
+### 🔹 8. **Callback Function**
+
+```js
+function fetchData(callback) {
+  setTimeout(() => {
+    callback("Data loaded");
+  }, 1000);
+}
+
+fetchData(function(data) {
+  console.log(data);
+});
+```
+
+---
+
+### 🔹 9. **Async Function (Promise-based)**
+
+```js
+async function fetchUser() {
+  return "User fetched!";
+}
+
+fetchUser().then(result => console.log(result));
+```
+
+---
+
